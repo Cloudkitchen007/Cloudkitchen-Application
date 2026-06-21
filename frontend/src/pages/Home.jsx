@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { categoryAPI, menuAPI } from '../services/api';
-import MenuCard from '../components/MenuCard';
-import HeroSection from '../components/HeroSection';  // ✅ now actually used
+import MenuCard from '../components/Menucard';
+import HeroSection from '../components/Herosection';  // ✅ now actually used
 
 const Home = ({ onCartClick }) => {
   const [categories,    setCategories]    = useState([]);

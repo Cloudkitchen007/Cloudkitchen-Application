@@ -1,4 +1,4 @@
-// src/components/MenuCard.jsx
+// src/components/Menucard.jsx
 
 import React from 'react';
 import toast from 'react-hot-toast';

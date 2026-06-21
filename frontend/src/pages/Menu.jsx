@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { menuAPI, categoryAPI } from '../services/api';
-import MenuCard from '../components/MenuCard';
+import MenuCard from '../components/Menucard';
 
 const Menu = () => {
   const [searchParams]              = useSearchParams();

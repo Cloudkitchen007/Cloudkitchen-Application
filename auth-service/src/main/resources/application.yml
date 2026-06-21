@@ -1,0 +1,26 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloudkitchen-auth-service
+
+cognito:
+  user-pool-id: ${USER_POOL_ID}
+  user-client-id: ${USER_CLIENT_ID}
+  restaurant-pool-id: ${RESTAURANT_POOL_ID}
+  restaurant-client-id: ${RESTAURANT_CLIENT_ID}
+
+aws:
+  region: ${AWS_REGION:ap-south-1}
+
+app:
+  cors:
+    allowed-origins: "*"
+
+logging:
+  level:
+    com.cloudkitchen: INFO
+    org.springframework.web: WARN
+  file:
+    name: /var/log/cloudkitchen/auth.log

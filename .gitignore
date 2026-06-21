@@ -1,0 +1,20 @@
+# Node / React
+node_modules/
+build/
+dist/
+.env.local
+
+# Java / Maven
+target/
+*.class
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/

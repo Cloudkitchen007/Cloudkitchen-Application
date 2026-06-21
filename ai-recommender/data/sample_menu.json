@@ -1,0 +1,272 @@
+[
+  {
+    "id": "f1",
+    "name": "Paneer Butter Masala",
+    "description": "Rich, creamy curry with soft paneer cubes in a spiced tomato-cashew gravy. A North Indian classic beloved for its velvety texture and balanced heat.",
+    "ingredients": ["Paneer", "Butter", "Tomato", "Onion", "Cashews", "Cream", "Garam Masala", "Fenugreek Leaves"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "contains_dairy", "contains_nuts"],
+    "price": 280.0
+  },
+  {
+    "id": "f2",
+    "name": "Veg Biryani",
+    "description": "Aromatic long-grain basmati rice layered with seasonal vegetables, saffron, caramelised onions, and whole spices. Slow-cooked in dum style for a deeply fragrant one-pot meal.",
+    "ingredients": ["Basmati Rice", "Carrot", "Peas", "Beans", "Saffron", "Caramelised Onion", "Whole Spices", "Mint"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "vegan", "spicy"],
+    "price": 220.0
+  },
+  {
+    "id": "f3",
+    "name": "Chicken Curry",
+    "description": "Tender chicken pieces slow-cooked in a deeply spiced onion-tomato masala with earthy coriander and warming whole spices. Pairs perfectly with naan or rice.",
+    "ingredients": ["Chicken", "Onion", "Tomato", "Garlic", "Ginger", "Coriander", "Whole Spices"],
+    "category": "Main Course",
+    "dietary_tags": ["non_vegetarian", "spicy"],
+    "price": 320.0
+  },
+  {
+    "id": "f4",
+    "name": "Vegan Tofu Salad",
+    "description": "Fresh garden greens topped with golden pan-seared tofu, cherry tomatoes, and a zesty lemon-herb vinaigrette. Light, protein-rich, and ready in minutes.",
+    "ingredients": ["Tofu", "Rocket Leaves", "Cherry Tomato", "Cucumber", "Olive Oil", "Lemon", "Herbs"],
+    "category": "Salad",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 180.0
+  },
+  {
+    "id": "f5",
+    "name": "Cheese Garlic Bread",
+    "description": "Oven-toasted artisan sourdough smothered in roasted garlic herb butter and bubbling mozzarella. An irresistible starter or side that disappears fast.",
+    "ingredients": ["Sourdough Bread", "Roasted Garlic", "Herb Butter", "Mozzarella", "Parsley"],
+    "category": "Appetizer",
+    "dietary_tags": ["vegetarian", "contains_dairy", "contains_gluten"],
+    "price": 120.0
+  },
+  {
+    "id": "f6",
+    "name": "Spicy Chicken Wings",
+    "description": "Crispy double-fried wings tossed in a house-made sriracha-honey glaze with a hint of smoked paprika. Dangerously addictive with a cooling yoghurt dip.",
+    "ingredients": ["Chicken Wings", "Sriracha", "Honey", "Smoked Paprika", "Garlic", "Butter"],
+    "category": "Appetizer",
+    "dietary_tags": ["non_vegetarian", "spicy", "high_calorie"],
+    "price": 280.0
+  },
+  {
+    "id": "f7",
+    "name": "Gluten-Free Margherita Pizza",
+    "description": "Stone-baked on a crispy gluten-free base with San Marzano tomato sauce, fresh buffalo mozzarella and torn basil. All the flavour, none of the gluten.",
+    "ingredients": ["GF Flour Base", "San Marzano Tomato", "Buffalo Mozzarella", "Fresh Basil", "Extra Virgin Olive Oil"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "gluten_free", "contains_dairy"],
+    "price": 350.0
+  },
+  {
+    "id": "f8",
+    "name": "Vegan Sushi Roll",
+    "description": "Inside-out roll filled with creamy avocado, crunchy cucumber, and tangy pickled daikon. Served with low-sodium soy sauce and pickled ginger.",
+    "ingredients": ["Sushi Rice", "Nori", "Avocado", "Cucumber", "Pickled Daikon", "Sesame Seeds"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free"],
+    "price": 280.0
+  },
+  {
+    "id": "f9",
+    "name": "Grilled Chicken Steak",
+    "description": "Juicy free-range chicken breast marinated 12 hours in lemon-herb brine, grilled to perfection and served with roasted seasonal vegetables and a cracked peppercorn jus.",
+    "ingredients": ["Free-Range Chicken Breast", "Roasted Seasonal Vegetables", "Peppercorn Jus", "Lemon", "Rosemary"],
+    "category": "Main Course",
+    "dietary_tags": ["non_vegetarian", "gluten_free", "healthy"],
+    "price": 380.0
+  },
+  {
+    "id": "f10",
+    "name": "Mango Protein Smoothie",
+    "description": "Thick, refreshing blend of Alphonso mango, ripe banana, cold almond milk, and 20g of plant protein. A post-workout or quick breakfast in a glass.",
+    "ingredients": ["Alphonso Mango", "Banana", "Almond Milk", "Plant Protein Powder", "Chia Seeds"],
+    "category": "Beverage",
+    "dietary_tags": ["vegetarian", "vegan", "healthy", "gluten_free"],
+    "price": 120.0
+  },
+  {
+    "id": "f11",
+    "name": "Fish and Chips",
+    "description": "Golden beer-battered cod fillet with thick-cut triple-cooked chips, minted mushy peas, and homemade tartar sauce. A British classic done right.",
+    "ingredients": ["Cod Fillet", "Potatoes", "Beer Batter", "Mushy Peas", "Tartar Sauce", "Lemon"],
+    "category": "Main Course",
+    "dietary_tags": ["non_vegetarian", "contains_gluten", "contains_seafood"],
+    "price": 320.0
+  },
+  {
+    "id": "f12",
+    "name": "Mushroom Risotto",
+    "description": "Slow-stirred Arborio rice with a medley of porcini, shiitake, and button mushrooms, white wine, and a generous fold of aged parmesan and truffle oil at the end.",
+    "ingredients": ["Arborio Rice", "Porcini Mushrooms", "Shiitake Mushrooms", "Parmesan", "White Wine", "Truffle Oil"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "contains_dairy", "gluten_free"],
+    "price": 280.0
+  },
+  {
+    "id": "f13",
+    "name": "Red Lentil Soup",
+    "description": "Warming bowl of red lentils slow-cooked with carrots, cumin, turmeric, and a final squeeze of lemon. Nourishing, filling, and ready in 20 minutes.",
+    "ingredients": ["Red Lentils", "Carrot", "Onion", "Cumin", "Turmeric", "Lemon", "Coriander"],
+    "category": "Soup",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 140.0
+  },
+  {
+    "id": "f14",
+    "name": "Thai Green Curry",
+    "description": "Fragrant coconut-milk curry with bamboo shoots, Thai basil, baby eggplant, and seasonal vegetables. Authentically spicy with a complex herbal finish.",
+    "ingredients": ["Coconut Milk", "Green Curry Paste", "Bamboo Shoots", "Thai Basil", "Baby Eggplant", "Kaffir Lime Leaf"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "vegan", "spicy", "gluten_free"],
+    "price": 260.0
+  },
+  {
+    "id": "f15",
+    "name": "Chocolate Lava Cake",
+    "description": "Warm 70% dark-chocolate cake with a molten liquid centre that flows when you cut in, served with hand-scraped vanilla bean ice cream and a raspberry coulis.",
+    "ingredients": ["Dark Chocolate 70%", "Butter", "Eggs", "Sugar", "Flour", "Vanilla Ice Cream", "Raspberry Coulis"],
+    "category": "Dessert",
+    "dietary_tags": ["vegetarian", "contains_dairy", "contains_gluten", "high_calorie"],
+    "price": 160.0
+  },
+  {
+    "id": "f16",
+    "name": "Masala Dosa",
+    "description": "Thin, fermented rice-lentil crepe filled with spiced potato masala, served with coconut chutney and piping-hot sambar. South India's favourite street breakfast.",
+    "ingredients": ["Rice", "Urad Dal", "Potato", "Onion", "Mustard Seeds", "Curry Leaves", "Coconut Chutney", "Sambar"],
+    "category": "Breakfast",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "spicy"],
+    "price": 130.0
+  },
+  {
+    "id": "f17",
+    "name": "Idli Sambar",
+    "description": "Soft, steamed rice-and-lentil cakes paired with a tamarind-spiced vegetable sambar and three chutneys. Light, digestible, and deeply satisfying.",
+    "ingredients": ["Idli Rice", "Urad Dal", "Toor Dal", "Tamarind", "Seasonal Vegetables", "Curry Leaves"],
+    "category": "Breakfast",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 100.0
+  },
+  {
+    "id": "f18",
+    "name": "Egg Bhurji Roll",
+    "description": "Fluffy scrambled eggs tossed with onion, tomato, green chilli, and spices, wrapped in a flaky paratha. A street-style breakfast roll packed with flavour.",
+    "ingredients": ["Eggs", "Onion", "Tomato", "Green Chilli", "Paratha", "Coriander", "Spices"],
+    "category": "Breakfast",
+    "dietary_tags": ["non_vegetarian", "contains_gluten", "spicy"],
+    "price": 110.0
+  },
+  {
+    "id": "f19",
+    "name": "Palak Paneer",
+    "description": "Creamy pureed spinach gravy with cubes of fresh paneer, tempered with garlic, ginger, and warming spices. A nutrient-dense, comforting vegetarian classic.",
+    "ingredients": ["Spinach", "Paneer", "Garlic", "Ginger", "Cream", "Onion", "Garam Masala"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "contains_dairy", "healthy"],
+    "price": 260.0
+  },
+  {
+    "id": "f20",
+    "name": "Mutton Rogan Josh",
+    "description": "Slow-braised tender mutton in a rich Kashmiri sauce of whole spices, Kashmiri chilli, and yoghurt. A bold, fragrant curry best enjoyed with steamed rice.",
+    "ingredients": ["Mutton", "Kashmiri Chilli", "Whole Spices", "Yoghurt", "Onion", "Garlic", "Fennel Seeds"],
+    "category": "Main Course",
+    "dietary_tags": ["non_vegetarian", "spicy", "high_calorie", "contains_dairy"],
+    "price": 420.0
+  },
+  {
+    "id": "f21",
+    "name": "Prawn Butter Garlic",
+    "description": "Jumbo prawns sautéed in a generous knob of butter with roasted garlic, white wine, and a finish of fresh parsley. Ready in under 10 minutes — pure luxury.",
+    "ingredients": ["Tiger Prawns", "Butter", "Roasted Garlic", "White Wine", "Parsley", "Lemon"],
+    "category": "Main Course",
+    "dietary_tags": ["non_vegetarian", "contains_seafood", "contains_dairy", "gluten_free"],
+    "price": 450.0
+  },
+  {
+    "id": "f22",
+    "name": "Dal Tadka",
+    "description": "Yellow toor lentils cooked until silky smooth, finished with a sizzling ghee tadka of cumin, garlic, dried red chilli, and asafoetida. Pure soul food.",
+    "ingredients": ["Toor Dal", "Ghee", "Cumin Seeds", "Garlic", "Dried Red Chilli", "Tomato", "Turmeric"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "gluten_free", "healthy"],
+    "price": 160.0
+  },
+  {
+    "id": "f23",
+    "name": "Quinoa Power Bowl",
+    "description": "Tri-colour quinoa base loaded with roasted sweet potato, crispy chickpeas, baby kale, sliced avocado, and a tahini-lemon dressing. Fuel for your whole day.",
+    "ingredients": ["Tri-Colour Quinoa", "Sweet Potato", "Chickpeas", "Baby Kale", "Avocado", "Tahini", "Lemon"],
+    "category": "Main Course",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 280.0
+  },
+  {
+    "id": "f24",
+    "name": "Avocado Toast",
+    "description": "Thick sourdough toast spread with smashed avocado, topped with a squeeze of lemon, chilli flakes, and microgreens. Simple, satisfying, and Instagram-worthy.",
+    "ingredients": ["Sourdough Bread", "Avocado", "Lemon", "Chilli Flakes", "Microgreens", "Olive Oil"],
+    "category": "Breakfast",
+    "dietary_tags": ["vegetarian", "vegan", "healthy", "contains_gluten"],
+    "price": 150.0
+  },
+  {
+    "id": "f25",
+    "name": "Açaí Berry Bowl",
+    "description": "Thick blended açaí base topped with granola, fresh banana slices, strawberry, chia seeds, and a drizzle of raw honey. A vibrant antioxidant-rich breakfast bowl.",
+    "ingredients": ["Açaí Puree", "Granola", "Banana", "Strawberry", "Chia Seeds", "Honey", "Coconut Flakes"],
+    "category": "Breakfast",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 200.0
+  },
+  {
+    "id": "f26",
+    "name": "Chicken Caesar Wrap",
+    "description": "Grilled chicken strips, crisp romaine, shaved parmesan, and house-made Caesar dressing rolled tight in a warm whole-wheat tortilla. Lunch sorted.",
+    "ingredients": ["Grilled Chicken", "Romaine Lettuce", "Parmesan", "Caesar Dressing", "Whole-Wheat Tortilla", "Croutons"],
+    "category": "Appetizer",
+    "dietary_tags": ["non_vegetarian", "contains_dairy", "contains_gluten"],
+    "price": 220.0
+  },
+  {
+    "id": "f27",
+    "name": "Hummus with Warm Pita",
+    "description": "Silky smooth chickpea hummus drizzled with extra-virgin olive oil and dusted with smoked paprika, served with warm, pillowy pita triangles for dipping.",
+    "ingredients": ["Chickpeas", "Tahini", "Lemon", "Garlic", "Olive Oil", "Smoked Paprika", "Pita Bread"],
+    "category": "Appetizer",
+    "dietary_tags": ["vegetarian", "vegan", "healthy", "contains_gluten"],
+    "price": 130.0
+  },
+  {
+    "id": "f28",
+    "name": "Watermelon Mint Cooler",
+    "description": "Fresh watermelon blended with lime juice, a handful of mint leaves, and a pinch of black salt. Supremely hydrating and naturally sweet — zero sugar added.",
+    "ingredients": ["Watermelon", "Lime", "Mint Leaves", "Black Salt"],
+    "category": "Beverage",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free", "healthy"],
+    "price": 80.0
+  },
+  {
+    "id": "f29",
+    "name": "Cold Brew Coffee",
+    "description": "Single-origin coffee steeped cold for 18 hours, yielding a smooth, low-acid concentrate served over ice with optional oat milk. Caffeine that actually lasts.",
+    "ingredients": ["Single-Origin Coffee", "Filtered Water", "Ice", "Oat Milk (optional)"],
+    "category": "Beverage",
+    "dietary_tags": ["vegetarian", "vegan", "gluten_free"],
+    "price": 90.0
+  },
+  {
+    "id": "f30",
+    "name": "Gulab Jamun",
+    "description": "Soft, spongy milk-solid dumplings soaked overnight in a fragrant rose and cardamom syrup, served warm with a scoop of kulfi. India's most beloved dessert.",
+    "ingredients": ["Milk Solids", "Sugar", "Rose Water", "Cardamom", "Saffron", "Kulfi"],
+    "category": "Dessert",
+    "dietary_tags": ["vegetarian", "contains_dairy", "contains_gluten", "high_calorie"],
+    "price": 120.0
+  }
+]

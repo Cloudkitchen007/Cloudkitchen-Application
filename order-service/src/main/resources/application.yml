@@ -1,0 +1,39 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cloudkitchen-order-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cloudkitchen
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  # Tolerate uninitialized Hibernate lazy proxies when serializing entities
+  # (Order -> OrderItem -> MenuItem -> Category proxy). Without this, placing or
+  # listing an order throws 500 "No serializer found for ByteBuddyInterceptor".
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  flyway:
+    enabled: false   # schema owned by menu-service
+
+app:
+  cors:
+    allowed-origins: "*"
+
+logging:
+  level:
+    com.cloudkitchen: INFO
+  file:
+    name: /var/log/cloudkitchen/order.log

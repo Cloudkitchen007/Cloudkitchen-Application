@@ -7,6 +7,9 @@ langchain==0.3.7
 langchain-huggingface==0.1.2
 langchain-core==0.3.15
 huggingface-hub>=0.24.0
+# Required by ChatHuggingFace to load the Mistral tokenizer (SentencePiece-based)
+# for chat-template formatting; without it the LLM init fails → rule-based fallback.
+sentencepiece>=0.2.0
 chromadb==0.5.23
 sentence-transformers==3.3.1
 boto3>=1.28.0

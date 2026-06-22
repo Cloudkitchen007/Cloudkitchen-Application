@@ -1,0 +1,85 @@
+name: auth-service
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'auth-service/**'
+      - '.github/workflows/auth-service.yml'
+  pull_request:
+    paths:
+      - 'auth-service/**'
+      - '.github/workflows/auth-service.yml'
+
+env:
+  AWS_REGION: ap-south-1
+  ECR_REGISTRY: "256603361470.dkr.ecr.ap-south-1.amazonaws.com"
+  ECR_REPO: cloudkitchen-auth-repo
+  SERVICE_DIR: auth-service
+
+jobs:
+  build:
+    name: build · auth-service
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Java test
+        run: cd ${{ env.SERVICE_DIR }} && mvn -B test
+
+      - name: Semgrep SAST
+        run: pip install -q semgrep && semgrep --config auto --error ${{ env.SERVICE_DIR }} || true
+        continue-on-error: true
+
+      - name: Trivy filesystem scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: ${{ env.SERVICE_DIR }}
+          severity: HIGH,CRITICAL
+          exit-code: '0'
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: ECR login
+        run: aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY
+
+      - name: Build image
+        run: |
+          docker build \
+            -t $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} \
+            -t $ECR_REGISTRY/$ECR_REPO:latest \
+            ${{ env.SERVICE_DIR }}
+
+      - name: Trivy image scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPO }}:${{ github.sha }}
+          severity: HIGH,CRITICAL
+          exit-code: '0'
+
+      - name: Push image
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker push $ECR_REGISTRY/$ECR_REPO:${{ github.sha }}
+          docker push $ECR_REGISTRY/$ECR_REPO:latest
+
+      - name: Update GitOps imageTag
+        if: github.ref == 'refs/heads/main'
+        env:
+          GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
+        run: |
+          git clone https://cloudkitchen-ci:$GITOPS_TOKEN@github.com/${{ github.repository_owner }}/Cloudkitchen-GitOps.git gitops
+          cd gitops
+          git pull --rebase origin main
+          sed -i 's/^  auth: ".*"/  auth: "${{ github.sha }}"/' helm/cloudkitchen/values.yaml
+          git config user.name  "cloudkitchen-ci"
+          git config user.email "ci@cloudkitchen.local"
+          git add helm/cloudkitchen/values.yaml
+          git commit -m "ci(auth-service): deploy ${{ github.sha }}" || echo "no changes"
+          git push || { git pull --rebase && git push; }

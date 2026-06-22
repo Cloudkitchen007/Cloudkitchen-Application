@@ -11,6 +11,9 @@
     "react-scripts": "5.0.1",
     "@xenova/transformers": "^2.6.0"
   },
+  "devDependencies": {
+    "yaml": "^2.9.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"

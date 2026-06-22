@@ -56,6 +56,13 @@
             <artifactId>sqs</artifactId>
             <version>2.21.0</version>
         </dependency>
+        <!-- Required for IRSA: WebIdentityTokenCredentialsProvider assumes the
+             pod's IAM role via STS. Without this, credentials fail on EKS. -->
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId>
+            <artifactId>sts</artifactId>
+            <version>2.21.0</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -77,7 +77,7 @@ jobs:
           git clone https://cloudkitchen-ci:$GITOPS_TOKEN@github.com/${{ github.repository_owner }}/Cloudkitchen-GitOps.git gitops
           cd gitops
           git pull --rebase origin main
-          sed -i 's/^  order: ".*"/  order: "${{ github.sha }}"/' helm/cloudkitchen/values.yaml
+          sed -i 's|^  order: *"[^"]*"|  order: "${{ github.sha }}"|' helm/cloudkitchen/values.yaml
           git config user.name  "cloudkitchen-ci"
           git config user.email "ci@cloudkitchen.local"
           git add helm/cloudkitchen/values.yaml

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>package-lock.json - Trivy Report - 2026-06-24 18:12:14.990951699 +0000 UTC m=+553.420984980 </title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>package-lock.json - Trivy Report - 2026-06-24 18:12:14.995514641 +0000 UTC m=+553.425547943</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">npm</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">form-data</td>
+        <td>CVE-2026-12143</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">3.0.4</td>
+        <td>2.5.6, 3.0.5, 4.0.6</td>
+        <td class="links" data-more-links="off">
+          <a href="https://cwe.mitre.org/data/definitions/93.html">https://cwe.mitre.org/data/definitions/93.html</a>
+          <a href="https://github.com/form-data/form-data">https://github.com/form-data/form-data</a>
+          <a href="https://github.com/form-data/form-data/commit/64190db548c0179e37206858e39f27cf513e9435">https://github.com/form-data/form-data/commit/64190db548c0179e37206858e39f27cf513e9435</a>
+          <a href="https://github.com/form-data/form-data/commit/be3f3cf553978bac15a5182f1f3c3d2d38ccf229">https://github.com/form-data/form-data/commit/be3f3cf553978bac15a5182f1f3c3d2d38ccf229</a>
+          <a href="https://github.com/form-data/form-data/commit/c7133499c2ee1b80c678e411244f4442bf902045">https://github.com/form-data/form-data/commit/c7133499c2ee1b80c678e411244f4442bf902045</a>
+          <a href="https://github.com/form-data/form-data/security/advisories/GHSA-hmw2-7cc7-3qxx">https://github.com/form-data/form-data/security/advisories/GHSA-hmw2-7cc7-3qxx</a>
+          <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data">https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-12143">https://nvd.nist.gov/vuln/detail/CVE-2026-12143</a>
+          <a href="https://www.npmjs.com/package/form-data">https://www.npmjs.com/package/form-data</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">form-data</td>
+        <td>CVE-2026-12143</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">4.0.5</td>
+        <td>2.5.6, 3.0.5, 4.0.6</td>
+        <td class="links" data-more-links="off">
+          <a href="https://cwe.mitre.org/data/definitions/93.html">https://cwe.mitre.org/data/definitions/93.html</a>
+          <a href="https://github.com/form-data/form-data">https://github.com/form-data/form-data</a>
+          <a href="https://github.com/form-data/form-data/commit/64190db548c0179e37206858e39f27cf513e9435">https://github.com/form-data/form-data/commit/64190db548c0179e37206858e39f27cf513e9435</a>
+          <a href="https://github.com/form-data/form-data/commit/be3f3cf553978bac15a5182f1f3c3d2d38ccf229">https://github.com/form-data/form-data/commit/be3f3cf553978bac15a5182f1f3c3d2d38ccf229</a>
+          <a href="https://github.com/form-data/form-data/commit/c7133499c2ee1b80c678e411244f4442bf902045">https://github.com/form-data/form-data/commit/c7133499c2ee1b80c678e411244f4442bf902045</a>
+          <a href="https://github.com/form-data/form-data/security/advisories/GHSA-hmw2-7cc7-3qxx">https://github.com/form-data/form-data/security/advisories/GHSA-hmw2-7cc7-3qxx</a>
+          <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data">https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#multipart-form-data</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-12143">https://nvd.nist.gov/vuln/detail/CVE-2026-12143</a>
+          <a href="https://www.npmjs.com/package/form-data">https://www.npmjs.com/package/form-data</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">nth-check</td>
+        <td>CVE-2021-3803</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">1.0.2</td>
+        <td>2.0.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2021-3803">https://access.redhat.com/security/cve/CVE-2021-3803</a>
+          <a href="https://github.com/advisories/GHSA-rp65-9cf3-cjxr">https://github.com/advisories/GHSA-rp65-9cf3-cjxr</a>
+          <a href="https://github.com/fb55/nth-check">https://github.com/fb55/nth-check</a>
+          <a href="https://github.com/fb55/nth-check/commit/9894c1d2010870c351f66c6f6efcf656e26bb726">https://github.com/fb55/nth-check/commit/9894c1d2010870c351f66c6f6efcf656e26bb726</a>
+          <a href="https://github.com/fb55/nth-check/commit/9894c1d2010870c351f66c6f6efcf656e26bb726 (v2.0.1)">https://github.com/fb55/nth-check/commit/9894c1d2010870c351f66c6f6efcf656e26bb726 (v2.0.1)</a>
+          <a href="https://huntr.dev/bounties/8cf8cc06-d2cf-4b4e-b42c-99fafb0b04d0">https://huntr.dev/bounties/8cf8cc06-d2cf-4b4e-b42c-99fafb0b04d0</a>
+          <a href="https://huntr.dev/bounties/8cf8cc06-d2cf-4b4e-b42c-99fafb0b04d0/">https://huntr.dev/bounties/8cf8cc06-d2cf-4b4e-b42c-99fafb0b04d0/</a>
+          <a href="https://lists.debian.org/debian-lts-announce/2023/05/msg00023.html">https://lists.debian.org/debian-lts-announce/2023/05/msg00023.html</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-3803">https://nvd.nist.gov/vuln/detail/CVE-2021-3803</a>
+          <a href="https://ubuntu.com/security/notices/USN-6114-1">https://ubuntu.com/security/notices/USN-6114-1</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2021-3803">https://www.cve.org/CVERecord?id=CVE-2021-3803</a>
+        </td>
+      </tr>
+      <tr class="severity-CRITICAL">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-41242</td>
+        <td class="severity">CRITICAL</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>8.0.1, 7.5.5</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2026-41242">https://access.redhat.com/security/cve/CVE-2026-41242</a>
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/commit/535df444ac060243722ac5d672db205e5c531d75">https://github.com/protobufjs/protobuf.js/commit/535df444ac060243722ac5d672db205e5c531d75</a>
+          <a href="https://github.com/protobufjs/protobuf.js/commit/ff7b2afef8754837cc6dc64c864cd111ab477956">https://github.com/protobufjs/protobuf.js/commit/ff7b2afef8754837cc6dc64c864cd111ab477956</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.5">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.5</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.1">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.1</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-xq3m-2v4x-88gg">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-xq3m-2v4x-88gg</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-41242">https://nvd.nist.gov/vuln/detail/CVE-2026-41242</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-41242">https://www.cve.org/CVERecord?id=CVE-2026-41242</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-44289</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>7.5.6, 8.0.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-685m-2w69-288q">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-685m-2w69-288q</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44289">https://nvd.nist.gov/vuln/detail/CVE-2026-44289</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-44290</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>7.5.6, 8.0.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-jvwf-75h9-cwgg">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-jvwf-75h9-cwgg</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44290">https://nvd.nist.gov/vuln/detail/CVE-2026-44290</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-44291</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>7.5.6, 8.0.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-75px-5xx7-5xc7">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-75px-5xx7-5xc7</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44291">https://nvd.nist.gov/vuln/detail/CVE-2026-44291</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-44293</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>7.5.6, 8.0.2</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2026-44293">https://access.redhat.com/security/cve/CVE-2026-44293</a>
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v7.5.6</a>
+          <a href="https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2">https://github.com/protobufjs/protobuf.js/releases/tag/protobufjs-v8.0.2</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-66ff-xgx4-vchm">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-66ff-xgx4-vchm</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44293">https://nvd.nist.gov/vuln/detail/CVE-2026-44293</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-44293">https://www.cve.org/CVERecord?id=CVE-2026-44293</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">protobufjs</td>
+        <td>CVE-2026-48712</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.11.6</td>
+        <td>7.6.1, 8.4.1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/protobufjs/protobuf.js">https://github.com/protobufjs/protobuf.js</a>
+          <a href="https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-wcpc-wj8m-hjx6">https://github.com/protobufjs/protobuf.js/security/advisories/GHSA-wcpc-wj8m-hjx6</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">serialize-javascript</td>
+        <td>GHSA-5c6j-r48x-rmvq</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">4.0.0</td>
+        <td>7.0.3</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/advisories/GHSA-hxcc-f52p-wc94">https://github.com/advisories/GHSA-hxcc-f52p-wc94</a>
+          <a href="https://github.com/yahoo/serialize-javascript">https://github.com/yahoo/serialize-javascript</a>
+          <a href="https://github.com/yahoo/serialize-javascript/commit/2e609d0a9f4f5b097f0945af88bd45b9c7fb48d9">https://github.com/yahoo/serialize-javascript/commit/2e609d0a9f4f5b097f0945af88bd45b9c7fb48d9</a>
+          <a href="https://github.com/yahoo/serialize-javascript/releases/tag/v7.0.3">https://github.com/yahoo/serialize-javascript/releases/tag/v7.0.3</a>
+          <a href="https://github.com/yahoo/serialize-javascript/security/advisories/GHSA-5c6j-r48x-rmvq">https://github.com/yahoo/serialize-javascript/security/advisories/GHSA-5c6j-r48x-rmvq</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-7660">https://nvd.nist.gov/vuln/detail/CVE-2020-7660</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">serialize-javascript</td>
+        <td>GHSA-5c6j-r48x-rmvq</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">6.0.2</td>
+        <td>7.0.3</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/advisories/GHSA-hxcc-f52p-wc94">https://github.com/advisories/GHSA-hxcc-f52p-wc94</a>
+          <a href="https://github.com/yahoo/serialize-javascript">https://github.com/yahoo/serialize-javascript</a>
+          <a href="https://github.com/yahoo/serialize-javascript/commit/2e609d0a9f4f5b097f0945af88bd45b9c7fb48d9">https://github.com/yahoo/serialize-javascript/commit/2e609d0a9f4f5b097f0945af88bd45b9c7fb48d9</a>
+          <a href="https://github.com/yahoo/serialize-javascript/releases/tag/v7.0.3">https://github.com/yahoo/serialize-javascript/releases/tag/v7.0.3</a>
+          <a href="https://github.com/yahoo/serialize-javascript/security/advisories/GHSA-5c6j-r48x-rmvq">https://github.com/yahoo/serialize-javascript/security/advisories/GHSA-5c6j-r48x-rmvq</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-7660">https://nvd.nist.gov/vuln/detail/CVE-2020-7660</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">underscore</td>
+        <td>CVE-2026-27601</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">1.13.6</td>
+        <td>1.13.8</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2026-27601">https://access.redhat.com/security/cve/CVE-2026-27601</a>
+          <a href="https://github.com/jashkenas/underscore">https://github.com/jashkenas/underscore</a>
+          <a href="https://github.com/jashkenas/underscore/commit/411e222eb0ca5d570cc4f6315c02c05b830ed2b4">https://github.com/jashkenas/underscore/commit/411e222eb0ca5d570cc4f6315c02c05b830ed2b4</a>
+          <a href="https://github.com/jashkenas/underscore/commit/a6e23ae9647461ec33ad9f92a2ecfc220eea0a84">https://github.com/jashkenas/underscore/commit/a6e23ae9647461ec33ad9f92a2ecfc220eea0a84</a>
+          <a href="https://github.com/jashkenas/underscore/issues/3011">https://github.com/jashkenas/underscore/issues/3011</a>
+          <a href="https://github.com/jashkenas/underscore/security/advisories/GHSA-qpx9-hpmf-5gmw">https://github.com/jashkenas/underscore/security/advisories/GHSA-qpx9-hpmf-5gmw</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-27601">https://nvd.nist.gov/vuln/detail/CVE-2026-27601</a>
+          <a href="https://underscorejs.org/#1.13.8">https://underscorejs.org/#1.13.8</a>
+          <a href="https://underscorejs.org/#flatten">https://underscorejs.org/#flatten</a>
+          <a href="https://underscorejs.org/#isEqual">https://underscorejs.org/#isEqual</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-27601">https://www.cve.org/CVERecord?id=CVE-2026-27601</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+    </table>
+  </body>
+</html>

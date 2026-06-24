@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>requirements.txt - Trivy Report - 2026-06-24 18:03:00.053951539 +0000 UTC m=+0.410628339 </title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>requirements.txt - Trivy Report - 2026-06-24 18:03:00.061537955 +0000 UTC m=+0.418214735</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">pip</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">langchain</td>
+        <td>CVE-2026-45134</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.3.7</td>
+        <td>0.3.30</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/langchain-ai/langsmith-sdk">https://github.com/langchain-ai/langsmith-sdk</a>
+          <a href="https://github.com/langchain-ai/langsmith-sdk/security/advisories/GHSA-3644-q5cj-c5c7">https://github.com/langchain-ai/langsmith-sdk/security/advisories/GHSA-3644-q5cj-c5c7</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-45134">https://nvd.nist.gov/vuln/detail/CVE-2026-45134</a>
+        </td>
+      </tr>
+      <tr class="severity-CRITICAL">
+        <td class="pkg-name">langchain-core</td>
+        <td>CVE-2025-68664</td>
+        <td class="severity">CRITICAL</td>
+        <td class="pkg-version">0.3.15</td>
+        <td>1.2.5, 0.3.81</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-68664">https://access.redhat.com/security/cve/CVE-2025-68664</a>
+          <a href="https://github.com/langchain-ai/langchain">https://github.com/langchain-ai/langchain</a>
+          <a href="https://github.com/langchain-ai/langchain/commit/5ec0fa69de31bbe3d76e4cf9cd65a6accb8466c8">https://github.com/langchain-ai/langchain/commit/5ec0fa69de31bbe3d76e4cf9cd65a6accb8466c8</a>
+          <a href="https://github.com/langchain-ai/langchain/commit/d9ec4c5cc78960abd37da79b0250f5642e6f0ce6">https://github.com/langchain-ai/langchain/commit/d9ec4c5cc78960abd37da79b0250f5642e6f0ce6</a>
+          <a href="https://github.com/langchain-ai/langchain/pull/34455">https://github.com/langchain-ai/langchain/pull/34455</a>
+          <a href="https://github.com/langchain-ai/langchain/pull/34458">https://github.com/langchain-ai/langchain/pull/34458</a>
+          <a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D0.3.81">https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D0.3.81</a>
+          <a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.2.5">https://github.com/langchain-ai/langchain/releases/tag/langchain-core%3D%3D1.2.5</a>
+          <a href="https://github.com/langchain-ai/langchain/security/advisories/GHSA-c67j-w6g6-q2cm">https://github.com/langchain-ai/langchain/security/advisories/GHSA-c67j-w6g6-q2cm</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-68664">https://nvd.nist.gov/vuln/detail/CVE-2025-68664</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-68664">https://www.cve.org/CVERecord?id=CVE-2025-68664</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">langchain-core</td>
+        <td>CVE-2025-65106</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.3.15</td>
+        <td>1.0.7, 0.3.80</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2025-65106">https://access.redhat.com/security/cve/CVE-2025-65106</a>
+          <a href="https://github.com/langchain-ai/langchain">https://github.com/langchain-ai/langchain</a>
+          <a href="https://github.com/langchain-ai/langchain/commit/c4b6ba254e1a49ed91f2e268e6484011c540542a">https://github.com/langchain-ai/langchain/commit/c4b6ba254e1a49ed91f2e268e6484011c540542a</a>
+          <a href="https://github.com/langchain-ai/langchain/commit/fa7789d6c21222b85211755d822ef698d3b34e00">https://github.com/langchain-ai/langchain/commit/fa7789d6c21222b85211755d822ef698d3b34e00</a>
+          <a href="https://github.com/langchain-ai/langchain/security/advisories/GHSA-6qv9-48xg-fc7f">https://github.com/langchain-ai/langchain/security/advisories/GHSA-6qv9-48xg-fc7f</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-65106">https://nvd.nist.gov/vuln/detail/CVE-2025-65106</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2025-65106">https://www.cve.org/CVERecord?id=CVE-2025-65106</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">langchain-core</td>
+        <td>CVE-2026-34070</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.3.15</td>
+        <td>1.2.22</td>
+        <td class="links" data-more-links="off">
+          <a href="https://access.redhat.com/security/cve/CVE-2026-34070">https://access.redhat.com/security/cve/CVE-2026-34070</a>
+          <a href="https://github.com/langchain-ai/langchain">https://github.com/langchain-ai/langchain</a>
+          <a href="https://github.com/langchain-ai/langchain/commit/27add913474e01e33bededf4096151130ba0d47c">https://github.com/langchain-ai/langchain/commit/27add913474e01e33bededf4096151130ba0d47c</a>
+          <a href="https://github.com/langchain-ai/langchain/releases/tag/langchain-core==1.2.22">https://github.com/langchain-ai/langchain/releases/tag/langchain-core==1.2.22</a>
+          <a href="https://github.com/langchain-ai/langchain/security/advisories/GHSA-qh6h-p6c9-ff54">https://github.com/langchain-ai/langchain/security/advisories/GHSA-qh6h-p6c9-ff54</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-34070">https://nvd.nist.gov/vuln/detail/CVE-2026-34070</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-34070">https://www.cve.org/CVERecord?id=CVE-2026-34070</a>
+        </td>
+      </tr>
+      <tr class="severity-HIGH">
+        <td class="pkg-name">langchain-core</td>
+        <td>CVE-2026-44843</td>
+        <td class="severity">HIGH</td>
+        <td class="pkg-version">0.3.15</td>
+        <td>1.3.3, 0.3.85</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/langchain-ai/langchain">https://github.com/langchain-ai/langchain</a>
+          <a href="https://github.com/langchain-ai/langchain/security/advisories/GHSA-pjwx-r37v-7724">https://github.com/langchain-ai/langchain/security/advisories/GHSA-pjwx-r37v-7724</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-44843">https://nvd.nist.gov/vuln/detail/CVE-2026-44843</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+    </table>
+  </body>
+</html>

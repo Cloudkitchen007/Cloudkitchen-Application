@@ -27,8 +27,13 @@ jobs:
       - name: Java test
         run: cd ${{ env.SERVICE_DIR }} && mvn -B test
 
-      - name: Semgrep SAST
-        run: pip install -q semgrep && semgrep --config auto --error ${{ env.SERVICE_DIR }} || true
+      - name: Semgrep SAST (→ Semgrep Cloud dashboard)
+        # `semgrep ci` scans and UPLOADS findings to the Semgrep AppSec Platform
+        # (semgrep.dev) when SEMGREP_APP_TOKEN is set, so results appear in the web UI.
+        # || true + continue-on-error keep it report-only (never blocks the build).
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+        run: pip install -q semgrep && semgrep ci || true
         continue-on-error: true
 
       - name: Trivy filesystem scan

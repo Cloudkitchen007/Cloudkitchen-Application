@@ -66,7 +66,6 @@ async def recommend_forecast(req: ForecastRequest):
     """AI-powered inventory insights. Uses real SQS-derived demand when available."""
     insights = []
     for item in req.items:
-        # Prefer real order count from SQS consumer; fall back to frontend estimate
         real_demand = demand_tracker.get_demand(item.name)
         effective_demand = real_demand if real_demand is not None else item.predicted_demand
 

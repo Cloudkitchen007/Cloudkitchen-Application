@@ -28,9 +28,7 @@ jobs:
         run: cd ${{ env.SERVICE_DIR }} && mvn -B test
 
       - name: Semgrep SAST (→ Semgrep Cloud dashboard)
-        # `semgrep ci` scans and UPLOADS findings to the Semgrep AppSec Platform
-        # (semgrep.dev) when SEMGREP_APP_TOKEN is set, so results appear in the web UI.
-        # || true + continue-on-error keep it report-only (never blocks the build).
+
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
         run: pip install -q semgrep && semgrep ci || true
@@ -56,10 +54,17 @@ jobs:
 
       - name: Build image
         run: |
+          # Build with commit SHA for all branches (used for scans and traceability)
           docker build \
             -t $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} \
-            -t $ECR_REGISTRY/$ECR_REPO:latest \
             ${{ env.SERVICE_DIR }}
+
+          # Additionally tag for the target environment (dev or prod)
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            docker tag $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} $ECR_REGISTRY/$ECR_REPO:latest
+          elif [ "${{ github.ref }}" = "refs/heads/dev" ]; then
+            docker tag $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} $ECR_REGISTRY/$ECR_REPO:dev-latest
+          fi
 
       - name: Trivy image scan
         uses: aquasecurity/trivy-action@master
@@ -68,13 +73,20 @@ jobs:
           severity: HIGH,CRITICAL
           exit-code: '0'
 
-      - name: Push image
-        if: github.ref == 'refs/heads/main'
+      - name: Push image to ECR
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
         run: |
+          # Always push the commit SHA tag (immutable record)
           docker push $ECR_REGISTRY/$ECR_REPO:${{ github.sha }}
-          docker push $ECR_REGISTRY/$ECR_REPO:latest
 
-      - name: Update GitOps imageTag
+          # Push environment-specific tag (mutable, always points to latest of that env)
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            docker push $ECR_REGISTRY/$ECR_REPO:latest
+          elif [ "${{ github.ref }}" = "refs/heads/dev" ]; then
+            docker push $ECR_REGISTRY/$ECR_REPO:dev-latest
+          fi
+
+      - name: Update GitOps prod valueFile
         if: github.ref == 'refs/heads/main'
         env:
           GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
@@ -82,9 +94,26 @@ jobs:
           git clone https://cloudkitchen-ci:$GITOPS_TOKEN@github.com/${{ github.repository_owner }}/Cloudkitchen-GitOps.git gitops
           cd gitops
           git pull --rebase origin main
-          sed -i 's|^  menu: *"[^"]*"|  menu: "${{ github.sha }}"|' helm/cloudkitchen/values.yaml
+          # Update values-prod.yaml (prod branch watches main)
+          sed -i 's|^  menu: *"[^"]*"|  menu: "${{ github.sha }}"|' helm/cloudkitchen/values-prod.yaml
           git config user.name  "cloudkitchen-ci"
           git config user.email "ci@cloudkitchen.local"
-          git add helm/cloudkitchen/values.yaml
-          git commit -m "ci(menu-service): deploy ${{ github.sha }}" || echo "no changes"
+          git add helm/cloudkitchen/values-prod.yaml
+          git commit -m "ci(menu-service): prod deploy ${{ github.sha }}" || echo "no changes"
+          git push || { git pull --rebase && git push; }
+
+      - name: Update GitOps dev valueFile
+        if: github.ref == 'refs/heads/dev'
+        env:
+          GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
+        run: |
+          git clone https://cloudkitchen-ci:$GITOPS_TOKEN@github.com/${{ github.repository_owner }}/Cloudkitchen-GitOps.git gitops
+          cd gitops
+          git pull --rebase origin dev
+          # Update values-dev.yaml (dev branch watches dev)
+          sed -i 's|^  menu: *"[^"]*"|  menu: "dev-latest"|' helm/cloudkitchen/values-dev.yaml
+          git config user.name  "cloudkitchen-ci"
+          git config user.email "ci@cloudkitchen.local"
+          git add helm/cloudkitchen/values-dev.yaml
+          git commit -m "ci(menu-service): dev deploy ${{ github.sha }}" || echo "no changes"
           git push || { git pull --rebase && git push; }

@@ -10,7 +10,7 @@ def filter_food_items(user: UserProfile, all_items: List[FoodItem]) -> List[Food
     for item in all_items:
         is_safe = True
         
-        # 1. Check Allergies (Must NOT contain these tags)
+        
         for allergy in user.allergies:
             if allergy in item.dietary_tags:
                 is_safe = False
@@ -19,7 +19,7 @@ def filter_food_items(user: UserProfile, all_items: List[FoodItem]) -> List[Food
         if not is_safe:
             continue
             
-        # 2. Check Strict Preferences (e.g. if user is vegetarian, item MUST be vegetarian/vegan)
+      
         if "vegetarian" in user.preferences:
             if "vegetarian" not in item.dietary_tags and "vegan" not in item.dietary_tags:
                 is_safe = False

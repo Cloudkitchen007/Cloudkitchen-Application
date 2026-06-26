@@ -2,7 +2,7 @@ name: frontend
 
 on:
   push:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - 'frontend/**'
       - '.github/workflows/frontend.yml'
@@ -64,11 +64,21 @@ jobs:
         run: |
           docker build \
             -t $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} \
-            -t $ECR_REGISTRY/$ECR_REPO:latest \
             frontend
 
-      - name: Push image
-        if: github.ref == 'refs/heads/main'
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            docker tag $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} $ECR_REGISTRY/$ECR_REPO:latest
+          elif [ "${{ github.ref }}" = "refs/heads/dev" ]; then
+            docker tag $ECR_REGISTRY/$ECR_REPO:${{ github.sha }} $ECR_REGISTRY/$ECR_REPO:dev-latest
+          fi
+
+      - name: Push image to ECR
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev'
         run: |
           docker push $ECR_REGISTRY/$ECR_REPO:${{ github.sha }}
-          docker push $ECR_REGISTRY/$ECR_REPO:latest
+
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            docker push $ECR_REGISTRY/$ECR_REPO:latest
+          elif [ "${{ github.ref }}" = "refs/heads/dev" ]; then
+            docker push $ECR_REGISTRY/$ECR_REPO:dev-latest
+          fi

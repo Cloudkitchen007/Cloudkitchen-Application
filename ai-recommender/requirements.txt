@@ -1,14 +1,10 @@
 fastapi==0.104.1
 uvicorn==0.23.2
-# langchain 0.3.x requires pydantic>=2.7.4 — pinning 2.4.2 caused pip ResolutionImpossible.
-# Relaxed range satisfies fastapi (<3), chromadb (>=1.9) and langchain 0.3.x simultaneously.
 pydantic>=2.7.4,<3
 langchain==0.3.7
 langchain-huggingface==0.1.2
 langchain-core==0.3.15
 huggingface-hub>=0.24.0
-# Required by ChatHuggingFace to load the Mistral tokenizer (SentencePiece-based)
-# for chat-template formatting; without it the LLM init fails → rule-based fallback.
 sentencepiece>=0.2.0
 chromadb==0.5.23
 sentence-transformers==3.3.1
